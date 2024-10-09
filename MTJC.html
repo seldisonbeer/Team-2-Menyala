@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORE THAN JUST COFFEE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #1a2919;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            color: #131313;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        header .logo {
+            height: auto;
+            max-height: 5rem;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            flex-grow: 1;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            color: #000000;
+            text-decoration: none;
+            padding: 0 1rem;
+            white-space: nowrap;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: #1a2919;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            flex-wrap: wrap;
+        }
+
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: 0.6s;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+
+        .text-content {
+            width: 55%;
+            padding-right: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #131313;
+        }
+
+        h2 {
+            text-align: left;
+            color: #ffffff;
+        }
+
+        .signature-title {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 2.5rem;
+        }
+
+        p {
+            text-align: justify;
+            color: #ffffff;
+        }
+
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem;
+        }
+
+        .cta-button {
+            padding: 0.5rem;
+            background-color: #fcfcfc;
+            color: #000000;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: bold;
+            position: relative;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+
+        .cta-button i {
+            margin-right: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background-color: #fcfffe;
+        }
+
+        .image {
+            width: 40%;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .signature-menu {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            max-width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            margin: 0 1rem;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .menu-item img {
+            width: 200px;
+            max-width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .menu-item img:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item h3 {
+            margin-top: 0.5rem;
+            font-size: 1.125rem;
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 2.5rem;
+        }
+
+        .testimonials {
+            background-color: #1a2919;
+            padding: 2rem 0;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial {
+            width: 300px;
+            margin: 0 1rem;
+            background-color: #e2dfb8;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 5px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #000000;
+        }
+
+        .testimonial h4 {
+            margin-top: 1rem;
+            color: #333;
+        }
+
+        .testimonial span {
+            color: #000000;
+            font-size: 0.9rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-controls i {
+            font-size: 1.5rem;
+            color: #c2b7b7;
+            cursor: pointer;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .carousel-controls i:hover {
+            color: #c7b1b1;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column-reverse;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .image {
+                width: 80%;
+                margin-bottom: 1rem;
+            }
+
+            .text-content {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            header .logo {
+                max-height: 4rem;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            header nav {
+                justify-content: center;
+                padding-top: 0.5rem;
+            }
+        }
+
+        .our-people {
+            background-color: #1a2919;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .our-people h2 {
+            margin-bottom: 2rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .people-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+            padding: 1rem;
+            background-color: #2e3b29;
+            border-radius: 8px;
+        }
+
+        .people-photo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .employee-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .people-message {
+            flex: 2;
+            text-align: left;
+            margin-left: 1.5rem;
+        }
+
+        .people-message p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #fcfcfc;
+        }
+
+        .people-message h4 {
+            margin-top: 0.75rem;
+            color: #dcdcdc;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .people-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .people-message {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .employee-photo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="LOGO MTJC.png" alt="Logo Coffee After Lunch" class="logo">
+        <h1>MORE THAN JUST COFFEE</h1>
+        <nav>
+            <a href="our-people.html">OUR PEOPLE</a>
+            <a href="menu.html">MENU</a>
+            <a href="store.html">STORE</a>
+            <a href="contact-us.html">CONTACT US</a>
+        </nav>
+    </header>
+
+    <div class="content" data-aos="fade-right">
+        <div class="text-content" data-aos="fade-left">
+            <h2>OUR STORY</h2>
+            <p>
+                Didirikan pada tahun 2024, More Than Just Coffee lahir bukan hanya dari hasrat untuk menikmati kopi yang nikmat, tetapi dari tujuan yang lebih dalam: untuk menciptakan peluang dan dukungan bagi para penyandang disabilitas. Kami percaya pada kekuatan kopi untuk menghubungkan orang-orang dan menumbuhkan rasa kebersamaan. Di sini, setiap cangkir yang Anda nikmati adalah bagian dari misi yang lebih besar - misi yang memberdayakan karyawan kami, yang sebagian merupakan penyandang disabilitas, untuk membangun karir yang bermakna dan menyumbangkan bakat unik mereka.
+                <br><br>
+                Kedai kopi kami lebih dari sekadar tempat untuk beristirahat dan memulihkan tenaga, melainkan tempat di mana keberagaman dihargai, dan kesempatan diberikan kepada mereka yang sering kali terabaikan oleh masyarakat. Kami bangga dengan setiap cangkir yang kami sajikan, karena kami tahu bahwa setiap tegukan membantu mendorong perubahan positif.
+            </p>
+        </div>
+        <img src="BARISTA DS.jpg" alt="BARISTA" class="image" data-aos="fade-right">
+    </div>
+
+    <h2 class="signature-title">OUR SIGNATURE MENU</h2>
+
+    <div class="signature-menu">
+        <div class="menu-item" data-aos="flip-left">
+            <img src="bttrscth.jpg" alt="Signature Menu 1">
+            <h3>Butterscotch Latte</h3>
+        </div>
+        <div class="menu-item" data-aos="flip-left">
+            <img src="caramel.jpeg" alt="Signature Menu 2">
+            <h3>Caramel Latte</h3>
+        </div>
+        <div class="menu-item" data-aos="flip-left">
+            <img src="americano.jpg" alt="Signature Menu 3">
+            <h3>Super Americano</h3>
+        </div>
+        <div class="menu-item" data-aos="flip-left">
+            <img src="macchiato.jpeg" alt="Siganture Menu 4">
+            <h3>Espresso Macchiato</h3>
+        </div>
+    </div>
+
+    <section class="testimonials">
+        <h2>TESTIMONI CUSTOMER</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slider">
+                <div class="testimonial" data-aos="fade-left">
+                    <p>“Setiap kunjungan ke More Than Just Coffee terasa istimewa. Kopinya luar biasa, tetapi yang benar-benar membuatnya menonjol adalah mengetahui bahwa Anda mendukung tim yang inklusif. Hal ini membuat setiap cangkir menjadi lebih bermakna!”</p>
+                    <h4>John Doe</h4>
+                    <span>Regular Customer</span>
+                </div>
+                <div class="testimonial" data-aos="fadeIn">
+                    <p>“Saya senang datang ke sini bukan hanya karena kopinya yang enak, tapi juga karena orang-orang yang luar biasa di belakang meja. Melihat bagaimana kafe ini memberdayakan para pegawai penyandang disabilitas benar-benar menginspirasi.”</p>
+                    <h4>Jane Smith</h4>
+                    <span>Community Member</span>
+                </div>
+                <div class="testimonial" data-aos="fade-right">
+                    <p>“More Than Just Coffee lebih dari sekadar kedai kopi, melainkan sebuah komunitas. Stafnya ramah, suasananya hangat, dan rasanya menyenangkan mengetahui bahwa saya berkontribusi pada sesuatu yang lebih besar. Semoga semakin banyak tempat positif seperti ini.</p>
+                    <h4>Michael Lee</h4>
+                    <span>Regular Customer</span>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <i class="fas fa-chevron-left" id="prev"></i>
+            <i class="fas fa-chevron-right" id="next"></i>
+        </div>
+    </section>
+
+    <section class="our-people">
+        <h2>WHAT OUR TEAM SAYS</h2>
+        <div class="people-container">
+            <div class="people-photo">
+                <img src="shena.jpg" alt="Employee 1" class="employee-photo">
+            </div>
+            <div class="people-message">
+                <p>
+                    "Bekerja di sini telah memberi saya kesempatan yang luar biasa untuk tumbuh dan berkembang. Saya merasa didukung dan diberdayakan setiap hari, serta menjadi bagian dari tim yang penuh dengan kepedulian. Saya bangga menjadi bagian dari More Than Just Coffee."
+                </p>
+                <h4>- Shena, Barista</h4>
+            </div>
+        </div>
+
+        <div class="people-container">
+            <div class="people-photo">
+                <img src="billie.jpg" alt="Employee 2" class="employee-photo">
+            </div>
+            <div class="people-message">
+                <p>
+                    "Kedai ini tidak hanya memberi saya pekerjaan, tetapi juga keluarga. Saya merasa diterima dan dihargai di sini. Setiap hari adalah kesempatan baru untuk berkontribusi dan berbagi kebahagiaan dengan pelanggan kami."
+                </p>
+                <h4>- Billie, Waiters</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 More Than Just Coffee. All Rights Reserved.
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+    <script>
+        const slider = document.querySelector('.testimonial-slider');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        let currentSlide = 0;
+        const slideCount = document.querySelectorAll('.testimonial').length;
+
+        prev.addEventListener('click', () => {
+            if (currentSlide === 0) {
+                currentSlide = slideCount - 1;
+            } else {
+                currentSlide--;
+            }
+            updateSliderPosition();
+        });
+
+        next.addEventListener('click', () => {
+            if (currentSlide === slideCount - 1) {
+                currentSlide = 0;
+            } else {
+                currentSlide++;
+            }
+            updateSliderPosition();
+        });
+
+        function updateSliderPosition() {
+            const slideWidth = document.querySelector('.testimonial').offsetWidth + 32; 
+            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
