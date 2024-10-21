@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donasi - More Than Just Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="donation.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo-mtjc.png" alt="Logo Coffee After Lunch" class="logo">
+        <h1>MORE THAN JUST COFFEE</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="our-people.html">OUR PEOPLE</a>
+            <a href="menu.html">MENU</a>
+            <a href="about-us.html">ABOUT</a>
+            <a href="https://maps.app.goo.gl/jFJK1tgyaY3g1YAL6" target="_blank" class="maps-icon header-maps-icon">
+                <i class="fas fa-map-marker-alt"></i> STORE
+            </a>
+        </nav>
+    </header>
+
+    <div class="donation-section">
+        <h2>DONATION FORM</h2>
+        <div class="donation-container">
+            <div class="donation-image">
+                <img src="picture1.jpg" alt="Donation Image">
+                <img src="picture3.jpg" alt="Donation Image 2">
+                <img src="picture4.jpg" alt="Donation Image 2">
+            </div>
+            <div class="donation-form">
+                <form id="donation-form">
+                    <label for="name">Nama:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="amount">Jumlah Donasi (minimal Rp.10.000):</label><br>
+                    <input type="text" id="amount" name="amount" required><br><br>
+
+                    <label for="payment-method">Metode Pembayaran:</label><br>
+                    <select id="payment-method" name="payment-method">
+                        <option value="bank-transfer">Transfer Bank</option>
+                        <option value="credit-card">Kartu Kredit</option>
+                        <option value="paypal">PayPal</option>
+                    </select><br><br>
+
+                    <label for="message">Pesan:</label><br>
+                    <textarea id="message" name="message"></textarea><br><br>
+
+                    <input type="submit" value="Donasi Sekarang" class="donate-button">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <h3>Terima Kasih!</h3>
+            <p>Terima kasih telah berdonasi! Donasi Anda sangat berarti bagi kami.</p>
+            <button id="closeModal">Tutup</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Team Rica Rica Scafolding.
+    </footer>
+
+    <script src="donation.js"></script>
+
+</body>
+</html>

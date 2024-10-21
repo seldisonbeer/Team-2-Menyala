@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Menu - More Than Just Coffee</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a2919;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            color: #131313;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        header .logo {
+            height: auto;
+            max-height: 5rem;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+            color: #000000;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            flex-grow: 1;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            color: #000000;
+            text-decoration: none;
+            padding: 0 1rem;
+            white-space: nowrap;
+        }
+
+        .header-maps-icon i {
+            color: #1a2919 !important; 
+            margin-right: 5px;
+        }
+
+        .header-maps-icon:hover i {
+            color: green !important; 
+        }
+
+        .menu-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px auto;
+            width: 600;
+            max-width: 1200px; 
+        }
+
+        .menu-header img {
+            width: 600;
+            height: 200;
+            border-radius: 10px;
+        }
+
+        .menu-container {
+            max-width: 1000px; 
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+        }
+        .menu-item {
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .menu-item:hover {
+            transform: scale(1.03);
+        }
+        .menu-item img {
+            width: 150px;
+            height: auto;
+            object-fit: cover;
+        }
+        .menu-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        .menu-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .menu-description {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .menu-price {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #8a6828;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr; 
+            }
+            .menu-item {
+                flex-direction: column;
+            }
+            .menu-item img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo-mtjc.png" alt="Logo Coffee After Lunch" class="logo">
+        <h1>MORE THAN JUST COFFEE</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="our-people.html">OUR PEOPLE</a>
+            <a href="menu.html">MENU</a>
+            <a href="about-us.html">ABOUT</a>
+            <a href="https://maps.app.goo.gl/jFJK1tgyaY3g1YAL6" target="_blank" class="maps-icon header-maps-icon">
+                <i class="fas fa-map-marker-alt"></i>STORE</a>
+        </nav>
+    </header>
+
+    <div class="menu-header">
+        <img src="header-menu.png" alt="Menu Header" style="width: 100%; height: 500;">
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-grid">
+    
+            <div class="menu-item">
+                <img src="butterscotch.jpg" alt="BL">
+                <div class="menu-content">
+                    <h2 class="menu-title">Butterscotch Latte</h2>
+                    <p class="menu-description">Kombinasi espresso dengan sirup butterscotch yang creamy, menghasilkan rasa manis dan kaya.</p>
+                    <p class="menu-price">Rp 35.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="americano.jpg" alt="IA">
+                <div class="menu-content">
+                    <h2 class="menu-title">Iced Americano</h2>
+                    <p class="menu-description">Espresso disajikan dengan es dan air dingin, menghasilkan rasa kopi yang kuat dan menyegarkan.</p>
+                    <p class="menu-price">Rp 28.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="caramel.jpeg" alt="CL">
+                <div class="menu-content">
+                    <h2 class="menu-title">Caramel Latte</h2>
+                    <p class="menu-description">Perpaduan espresso dengan sirup karamel, menciptakan minuman yang manis dan lembut.</p>
+                    <p class="menu-price">Rp 33.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="icedcaramelmocha.jpg" alt="ICM">
+                <div class="menu-content">
+                    <h2 class="menu-title">Iced Caramel Mocha</h2>
+                    <p class="menu-description">Espresso, susu, cokelat, dan karamel disajikan dingin dengan es, kombinasi yang sempurna untuk pecinta manis.</p>
+                    <p class="menu-price">Rp 38.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="icedcappucino.jpg" alt="IC">
+                <div class="menu-content">
+                    <h2 class="menu-title">Iced Cappuccino</h2>
+                    <p class="menu-description">Espresso dengan susu dingin dan busa susu, menciptakan minuman yang ringan dan menyegarkan.</p>
+                    <p class="menu-price">Rp 32.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="espressomilklatte.jpg" alt="EML">
+                <div class="menu-content">
+                    <h2 class="menu-title">Espresso Milk Latte</h2>
+                    <p class="menu-description">Espresso kuat yang dipadukan dengan susu panas dan microfoam lembut, cocok untuk pecinta kopi yang creamy.</p>
+                    <p class="menu-price">Rp 30.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="hotcappucino.jpg" alt="HC">
+                <div class="menu-content">
+                    <h2 class="menu-title">Hot Cappuccino</h2>
+                    <p class="menu-description">Espresso klasik yang dipadukan dengan susu panas dan busa tebal, ideal untuk hari-hari dingin.</p>
+                    <p class="menu-price">Rp 30.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="macchiato.jpeg" alt="HM">
+                <div class="menu-content">
+                    <h2 class="menu-title">Hot Macchiato</h2>
+                    <p class="menu-description">Espresso shot dengan sedikit busa susu di atasnya, menciptakan rasa yang kuat dan kaya.</p>
+                    <p class="menu-price">Rp 28.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="hotamericano.jpg" alt="HA">
+                <div class="menu-content">
+                    <h2 class="menu-title">Hot Americano</h2>
+                    <p class="menu-description">Espresso yang disajikan dengan air panas, menghasilkan rasa kopi yang pekat dan klasik.</p>
+                    <p class="menu-price">Rp 25.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="saladtunasandwich.jpg" alt="STS">
+                <div class="menu-content">
+                    <h2 class="menu-title">Salad Tuna Sandwich</h2>
+                    <p class="menu-description">Roti lapis dengan isian tuna segar dan sayuran, cocok untuk sarapan atau makan siang ringan.</p>
+                    <p class="menu-price">Rp 40.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="sandwichchickenteriyaki.jpg" alt="SCT">
+                <div class="menu-content">
+                    <h2 class="menu-title">Sandwich Chicken Teriyaki</h2>
+                    <p class="menu-description">Roti lapis berisi ayam teriyaki manis dengan sayuran segar, memberikan rasa Asia yang unik.</p>
+                    <p class="menu-price">Rp 42.000</p>
+                </div>
+            </div>
+    
+            <div class="menu-item">
+                <img src="tramezinisalmonsandiwch.jpg" alt="TSS">
+                <div class="menu-content">
+                    <h2 class="menu-title">Tramezzini Salmon Sandwich</h2>
+                    <p class="menu-description">Roti lapis Italia dengan salmon asap dan keju, menciptakan kombinasi rasa yang mewah dan segar.</p>
+                    <p class="menu-price">Rp 50.000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; Team Rica Rica Scafolding.
+    </footer>
+
+</body>
+</html>
